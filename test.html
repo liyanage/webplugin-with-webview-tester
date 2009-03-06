@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Test</title>
+	<style type='text/css'>
+		body {
+			font-family: monospace;
+			font-size: 12px;
+		}
+		
+		* {
+			padding: 2px;
+		}
+		
+		p {
+			margin: 4px 0 4px 0;
+		}
+		
+		h1 {
+			font-size: 12px;
+		}
+		
+		object {
+			padding: 0;
+		}
+		
+		#a:hover {
+			background-color: #bbf;
+		}
+		
+		#log {
+			border: 1px solid blue;
+		}
+	</style>
+	<script type='text/javascript'>
+		function init() {
+			document.getElementById('b').addEventListener('mouseover', doOver, false);
+			document.getElementById('b').addEventListener('mouseout', doOut, false);
+		}
+		
+		function doOver(event) {
+			document.getElementById('log').innerHTML = 'in';
+		}
+		
+		function doOut(event) {
+			document.getElementById('log').innerHTML = 'out';
+		}
+	</script>
+</head>
+<body onload='init();'>
+
+<h1>This is the toplevel WebView.</h1>
+
+<p id='a'>Paragraph 1: CSS :hover works here</p>
+
+<p id='b'>Paragraph 2: JS onmouseover/onmouseout work here</p>
+
+<p id='log'>out</p>
+
+<object data='test.foobarbaz' width='100%' height='200'></object>
+
+</body>
+</html>

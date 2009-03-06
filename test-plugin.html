@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Test</title>
+	<style type='text/css'>
+		body {
+			font-family: monospace;
+			background-color: #ddd;
+			font-size: 12px;
+		}
+		
+		* {
+			padding: 2px;
+		}
+		
+		p {
+			margin: 4px;
+		}
+		
+		h1 {
+			font-size: 12px;
+		}
+
+		#a:hover {
+			background-color: #bbf;
+		}
+		
+		
+		#log {
+			border: 1px solid blue;
+		}
+	</style>
+	<script type='text/javascript'>
+		function init() {
+			document.getElementById('b').addEventListener('mouseover', doOver, false);
+			document.getElementById('b').addEventListener('mouseout', doOut, false);
+		}
+		
+		function doOver(event) {
+			document.getElementById('log').innerHTML = 'in';
+		}
+		
+		function doOut(event) {
+			document.getElementById('log').innerHTML = 'out';
+		}
+	</script>
+</head>
+<body onload='init();'>
+
+<h1>This is the inner WebView displayed by the plugin view.</h1>
+
+<p id='a'>Paragraph 1: CSS :hover doesn't work here</p>
+
+<p id='b'>Paragraph 2: JS onmouseover/onmouseout doesn't work here</p>
+
+<p id='log'>out</p>
+
+<p>But if you click around Paragraph 1 and 2, the mousemoved events seem to get fired.</p>
+
+</body>
+</html>
